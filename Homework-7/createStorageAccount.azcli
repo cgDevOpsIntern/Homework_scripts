@@ -8,5 +8,3 @@ az storage account create \
   --sku Standard_LRS \
   --vnet-name build-agents-01-vnet \
   --subnet agents-subnet
-
-Clean up deployment

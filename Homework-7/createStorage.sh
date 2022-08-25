@@ -2,7 +2,7 @@
 echo "Creating new Account Storage"
 # Create an Azure storage account in the resource group.
 az storage account create \
-  --name storage01 \
+  --name 'storage${uniqueString(resourceGroup().id)}' \
   --location uksouth \
   --resource-group build-agents-01 \
   --sku Standard_LRS \

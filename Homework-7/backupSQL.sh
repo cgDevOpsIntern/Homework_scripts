@@ -2,7 +2,6 @@
 
 # Variable block
 
---name storage01sah7 \
   --location  \
   --resource-group build-agents-01 \
   --sku Standard_LRS \

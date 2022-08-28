@@ -20,6 +20,7 @@ echo "Creating $resourceGroup in $location..."
 if 
     az group exist \
     --name "$resourceGroup" \
+then 
     echo "$resourceGroup exists"
 else
     az group create \
@@ -37,13 +38,14 @@ az network vnet create \
 --location "$location" \
 --subnet-name "${subnetsArray[0]}" \
 --subnet-prefix "${subnetsArray[1]}" \
-for (( i = 2; i < "$((subname -1))"; i += 2 )); do 
-    az network vnet subnet create \ 
-    -g "$resourceGroup" \
-    --vnet-name "$vName" \ 
-    -n "${subnetsArray[$i]}" \
-    --address-prefixes "${subnetsArray[$((i + 1))]}"
-done 
+for (( i = 2; i < "$((subname -1))"; i += 2 )); 
+    do 
+        az network vnet subnet create \ 
+        -g "$resourceGroup" \
+        --vnet-name "$vName" \ 
+        -n "${subnetsArray[$i]}" \
+        --address-prefixes "${subnetsArray[$((i + 1))]}"
+    done 
 
 # Create a backend subnet.
 # echo "Creating $subnetBackEnd"

@@ -11,17 +11,34 @@ let "randomIdentifier=$RANDOM*$RANDOM"
 location="uksouth"
 resourceGroup="homework7-build-grup"
 tag="homework7-vnet-subnets"
-# vNet="homework7-vnet1"
-# addressPrefixVnet="10.1.0.0/24"
-# subnetsArray=("h7-Subnet1" "10.1.2.0/24" "h7-Subnet2" "10.1.3.0/24")
+vNet="homework7-vnet1"
+addressPrefixVnet="10.1.0.0/24"
+subnetsArray=("h7-Subnet1" "10.1.2.0/24" "h7-Subnet2" "10.1.3.0/24")
+subname="${#subnetArray[@]}"
 
 # Create a resource group
 echo "Creating $resourceGroup in $location..."
-az group create --name "$resourceGroup" --location "$location" --tags "$tag"
+az group create \
+--name "$resourceGroup" \
+--location "$location" \
+--tags "$tag"
 
 # Create a virtual network and a front-end subnet.
-# echo "Creating $vNet and $subnetFrontEnd"
-# az network vnet create --resource-group "$resourceGroup" --name "$vNet" --address-prefix "$addressPrefixVNet"  --location "$location" --subnet-name "$subnetFrontEnd" --subnet-prefix $subnetPrefixFrontEnd
+echo "Creating $vNet and $subnetFrontEnd"
+az network vnet create \
+--resource-group "$resourceGroup" \
+--name "$vNet" \
+--address-prefix "$addressPrefixVNet"  \
+--location "$location" \
+--subnet-name "${subnetArray[0]}" \
+--subnet-prefix "${subnetArray[1]}" \
+for (( i=2; i<$((subname -1)); i +=2 )); do
+    az network vnet subnet create \ 
+    -g "$resourceGroup" \
+    --vnet-name "$vName" \ 
+    -n "${subnetArray[$i]}" \
+    --address-prefixes "${subnetArray[$((i + 1))]}"
+done
 
 # Create a backend subnet.
 # echo "Creating $subnetBackEnd"

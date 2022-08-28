@@ -29,5 +29,5 @@ az group create --name "$resourceGroup" --location "$location" --tags "$tag"
 
 # Create a network security group (NSG) for the front-end subnet.
 
-az network vnet subnet create -g $MyResourceGroup --vnet-name MyVnet -n MySubnet \
+#az network vnet subnet create -g $MyResourceGroup --vnet-name MyVnet -n MySubnet \
     --address-prefixes 10.0.0.0/24 --network-security-group MyNsg --route-table MyRouteTable

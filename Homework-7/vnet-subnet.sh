@@ -21,7 +21,7 @@ if
     az group exist \
     --name "$resourceGroup" \
     echo "$resourceGroup exists"
-else 
+else
     az group create \
     --name "$resourceGroup" \
     --location "$location" \

@@ -33,7 +33,6 @@ az network nsg rule create \
     --access ${arrayRules[0]} \
     --direction ${arrayRules[1]} \
     --protocol ${arrayRules[2]} \
-    --tags "$tag" \
 
 
 echo "$nsgName in $resourceGroup created"

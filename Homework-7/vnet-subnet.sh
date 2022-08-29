@@ -38,5 +38,5 @@ for ((i = 2; i < $((subname - 1)); i += 2));
         --resource-group "$resourceGroup" \
         --vnet-name "$vNet" \ 
         --name ${subnetArray[$i]} \
-        --subnet-prefix ${subnetArray[$((i + 1))]}
+        --address-prefixes ${subnetArray[$((i + 1))]}
     done 

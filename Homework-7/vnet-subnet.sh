@@ -38,18 +38,18 @@ az group create \
 echo "Creating $vNet and $subnetsArray"
 az network vnet create \
 --resource-group "$resourceGroup" \
+--location "$location" \
 --name "$vNet" \
 --address-prefix "$addressPrefixVNet"  \
---location "$location" \
 --subnet-name "${subnetsArray[0]}" \
 --subnet-prefix "${subnetsArray[1]}" \
-for (( i = 2; i < "$((subname -1))"; i += 2 )); 
+for ((i = 2; i < $((subname -1)); i += 2 )); 
     do 
         az network vnet subnet create \ 
         -g "$resourceGroup" \
         --vnet-name "$vName" \ 
-        -n "${subnetsArray[$i]}" \
-        --address-prefixes "${subnetsArray[$((i + 1))]}"
+        -n ${subnetsArray[$i]} \
+        --address-prefixes ${subnetsArray[$((i + 1))]}
     done 
 
 # Create a backend subnet.
@@ -59,4 +59,4 @@ for (( i = 2; i < "$((subname -1))"; i += 2 ));
 # Create a network security group (NSG) for the front-end subnet.
 
 #az network vnet subnet create -g $MyResourceGroup --vnet-name MyVnet -n MySubnet \
-    --address-prefixes 10.0.0.0/24 --network-security-group MyNsg --route-table MyRouteTable
+#    --address-prefixes 10.0.0.0/24 --network-security-group MyNsg --route-table MyRouteTable

@@ -1,8 +1,9 @@
-#!/bin/bash -x
+#!/bin/bash
 
 #
-# Homework task: Script that can create VNET with subnets. Input parameters: 
-#• Region • VNet name • VNet address space • Array of subnets (names and address spaces)
+# 1. to see variables ad "-x" to "hashbang/bin/bash" line on top.
+# 2. Homework task: Script that can create VNET with subnets. Input parameters: 
+#   • Region • VNet name • VNet address space • Array of subnets (names and address spaces)
 #
 
 # Variable block

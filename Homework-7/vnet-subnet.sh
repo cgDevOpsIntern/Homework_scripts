@@ -30,8 +30,8 @@ az network vnet create \
 --location "$location" \
 --name "$vNet" \
 --address-prefix "$VnetPrefix"  \
---subnet-name $"{subnetArray[0]}" \
---subnet-prefix $"{subnetArray[1]}" 
+--subnet-name ${subnetArray[0]} \
+--subnet-prefix ${subnetArray[1]} 
 #for ((i = 2; i < $((subname - 1)); i += 2)); 
 #    do 
 #        az network vnet subnet create \ 

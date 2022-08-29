@@ -47,7 +47,7 @@ for ((i = 2; i < $((subname - 1)); i += 2));
     do 
         az network vnet subnet create \ 
         -g "$resourceGroup" \
-        --vnet-name "$vName" \ 
+        --vnet-name "$vNet" \ 
         -n ${subnetsArray[$i]} \
         --address-prefixes ${subnetsArray[$((i + 1))]}
     done 

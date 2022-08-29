@@ -17,17 +17,22 @@ subname="${#subnetArray[@]}"
 
 # Create a resource group
 echo "Creating $resourceGroup in $location..."
-if 
-    az group exists \
-    --name "$resourceGroup" \
-then 
-    echo "$resourceGroup exists"
-else
-    az group create \
+#if 
+#    az group exists \
+#    --name "$resourceGroup" \
+#then 
+#    echo "$resourceGroup exists"
+#else
+#    az group create \
+#    --name "$resourceGroup" \
+#    --location "$location" \
+#    --tags "$tag"
+#fi
+
+az group create \
     --name "$resourceGroup" \
     --location "$location" \
     --tags "$tag"
-fi
 
 # Create a virtual network and a front-end subnet.
 echo "Creating $vNet and $subnetsArray"

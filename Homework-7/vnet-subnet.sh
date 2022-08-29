@@ -18,7 +18,7 @@ subname="${#subnetArray[@]}"
 # Create a resource group
 echo "Creating $resourceGroup in $location..."
 if 
-    az group exist \
+    az group exists \
     --name "$resourceGroup" \
 then 
     echo "$resourceGroup exists"

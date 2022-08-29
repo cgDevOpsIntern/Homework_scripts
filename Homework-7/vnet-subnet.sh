@@ -11,23 +11,12 @@ location="uksouth"
 resourceGroup="homework7-build-grup"
 tag="homework7-vnet-subnets"
 vNet="homework7-vnet1"
-addressPrefixVnet="10.1.0.0/24"
+VnetPrefix="10.1.0.0/24"
 subnetsArray=("h7subnet1" "10.1.2.0/24" "h7subnet2" "10.1.3.0/24")
 subname=${#subnetArray[@]}
 
 # Create a resource group
 echo "Creating $resourceGroup in $location..."
-#if 
-#    az group exists \
-#    --name "$resourceGroup" \
-#then 
-#    echo "$resourceGroup exists"
-#else
-#    az group create \
-#    --name "$resourceGroup" \
-#    --location "$location" \
-#    --tags "$tag"
-#fi
 
 az group create \
     --name "$resourceGroup" \
@@ -40,23 +29,14 @@ az network vnet create \
 --resource-group "$resourceGroup" \
 --location "$location" \
 --name "$vNet" \
---address-prefix "$addressPrefixVNet"  \
+--address-prefix "$VnetPrefix"  \
 --subnet-name $"{subnetsArray[0]}" \
---subnet-prefix $"{subnetsArray[1]}" \
-for ((i = 2; i < $((subname - 1)); i += 2)); 
-    do 
-        az network vnet subnet create \ 
-        -g "$resourceGroup" \
-        --vnet-name "$vNet" \ 
-        -n ${subnetsArray[$i]} \
-        --address-prefixes ${subnetsArray[$((i + 1))]}
-    done 
-
-# Create a backend subnet.
-# echo "Creating $subnetBackEnd"
-# az network vnet subnet create --address-prefix $subnetPrefixBackEnd --name $subnetBackEnd --resource-group $resourceGroup --vnet-name $vNet
-
-# Create a network security group (NSG) for the front-end subnet.
-
-#az network vnet subnet create -g $MyResourceGroup --vnet-name MyVnet -n MySubnet \
-#    --address-prefixes 10.0.0.0/24 --network-security-group MyNsg --route-table MyRouteTable
+--subnet-prefix $"{subnetsArray[1]}" 
+#for ((i = 2; i < $((subname - 1)); i += 2)); 
+#    do 
+#        az network vnet subnet create \ 
+#        -g "$resourceGroup" \
+#        --vnet-name "$vNet" \ 
+#        -n ${subnetsArray[$i]} \
+#        --address-prefixes ${subnetsArray[$((i + 1))]}
+#    done 

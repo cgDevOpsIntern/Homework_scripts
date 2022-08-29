@@ -19,13 +19,13 @@ arrayRules=("Allow Inbound Tcp")
 # Creating NSG rule
 echo "Creating $nsgName rule"
 
-az network nsg create 
+az network nsg create \
 -g "$resourceGroup" \
 -n "$nsgName" \
 -l "$location" \
 --tags "$tag" \
 
-az network nsg rule create\
+az network nsg rule create \
     --resource-group "$resourceGroup" \
     --nsg-name "$nsgName" \
     --name "$nsgRule" \

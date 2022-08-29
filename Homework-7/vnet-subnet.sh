@@ -32,11 +32,11 @@ az network vnet create \
 --address-prefix "$VnetPrefix"  \
 --subnet-name ${subnetArray[0]} \
 --subnet-prefix ${subnetArray[1]} 
-#for ((i = 2; i < $((subname - 1)); i += 2)); 
-#    do 
-#        az network vnet subnet create \ 
-#        -g "$resourceGroup" \
-#        --vnet-name "$vNet" \ 
-#        -n ${subnetsArray[$i]} \
-#        --address-prefixes ${subnetsArray[$((i + 1))]}
-#    done 
+for ((i = 2; i < $((subname - 1)); i += 2)); 
+    do 
+        az network vnet subnet create \ 
+        -g "$resourceGroup" \
+        --vnet-name "$vNet" \ 
+        -n ${subnetsArray[$i]} \
+        --address-prefixes ${subnetsArray[$((i + 1))]}
+    done 

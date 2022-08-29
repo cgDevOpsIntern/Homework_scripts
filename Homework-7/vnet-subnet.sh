@@ -7,10 +7,10 @@
 #
 
 # Variable block
-let "randomIdentifier=$RANDOM*$RANDOM"
+#let "randomIdentifier=$RANDOM*$RANDOM"
 location="uksouth"
 resourceGroup="homework7-build-grup"
-tag="homework7-vnet-subnets"
+tag="homework7"
 vNet="homework7-vnet1"
 VnetPrefix="10.1.0.0/16"
 subnetArray=("subnet1h7" "10.1.0.0/24" "subnet2h7" "10.1.1.0/24")

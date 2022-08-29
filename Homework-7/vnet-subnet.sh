@@ -12,7 +12,7 @@ resourceGroup="homework7-build-grup"
 tag="homework7-vnet-subnets"
 vNet="homework7-vnet1"
 VnetPrefix="10.1.0.0/24"
-subnetsArray=("subnet1-h7" "10.1.2.0/24" "subnet2-h7" "10.1.3.0/24")
+subnetArray=("subnet1-h7" "10.1.2.0/24" "subnet2-h7" "10.1.3.0/24")
 subname=${#subnetArray[@]}
 
 # Create a resource group
@@ -24,14 +24,14 @@ az group create \
     --tags "$tag"
 
 # Create a virtual network and a front-end subnet.
-echo "Creating $vNet and $subnetsArray"
+echo "Creating $vNet and $subnetArray"
 az network vnet create \
 --resource-group "$resourceGroup" \
 --location "$location" \
 --name "$vNet" \
 --address-prefix "$VnetPrefix"  \
---subnet-name $"{subnetsArray[0]}" \
---subnet-prefix $"{subnetsArray[1]}" 
+--subnet-name $"{subnetArray[0]}" \
+--subnet-prefix $"{subnetArray[1]}" 
 #for ((i = 2; i < $((subname - 1)); i += 2)); 
 #    do 
 #        az network vnet subnet create \ 

@@ -14,7 +14,7 @@ location="uksouth"
 tag="homework7"
 nsgRule='nsgRuleh7'
 priority="1000"
-arrayRules=("Allow" "Inbound Tcp")
+arrayRules=("Allow" "Inbound" "Tcp")
 
 # Creating NSG rule
 echo "Creating $nsgName rule"

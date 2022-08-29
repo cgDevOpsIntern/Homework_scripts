@@ -12,7 +12,7 @@ resourceGroup="homework7-build-grup"
 tag="homework7-vnet-subnets"
 vNet="homework7-vnet1"
 VnetPrefix="10.1.0.0/24"
-subnetsArray=("h7subnet1" "10.1.2.0/24" "h7subnet2" "10.1.3.0/24")
+subnetsArray=("subnet1-h7" "10.1.2.0/24" "subnet2-h7" "10.1.3.0/24")
 subname=${#subnetArray[@]}
 
 # Create a resource group

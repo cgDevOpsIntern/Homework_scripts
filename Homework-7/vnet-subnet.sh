@@ -23,7 +23,7 @@ az group create \
     --location "$location" \
     --tags "$tag"
 
-# Create a virtual network and a front-end subnet.
+# Create a virtual network and a subnets.
 echo "Creating $vNet and $subnetArray"
 az network vnet create \
 --resource-group "$resourceGroup" \
@@ -37,6 +37,6 @@ for ((i = 2; i < $((subname - 1)); i += 2));
         az network vnet subnet create \ 
         --resource-group "$resourceGroup" \
         --vnet-name "$vNet" \ 
-        --name ${subnetsArray[$i]} \
-        --address-prefixes ${subnetsArray[$((i + 1))]}
+        --subnet-name ${subnetsArray[$i]} \
+        --subnet-prefix ${subnetsArray[$((i + 1))]}
     done 

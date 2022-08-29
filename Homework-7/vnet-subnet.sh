@@ -43,7 +43,7 @@ az network vnet create \
 --address-prefix "$addressPrefixVNet"  \
 --subnet-name $"{subnetsArray[0]}" \
 --subnet-prefix $"{subnetsArray[1]}" \
-for ((i = 2; i < $((subname - 1)); i += 2)); 
+for ((i = 2; i < $(subname - 1); i += 2)); 
     do 
         az network vnet subnet create \ 
         -g "$resourceGroup" \

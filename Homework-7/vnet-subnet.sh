@@ -13,7 +13,7 @@ tag="homework7-vnet-subnets"
 vNet="homework7-vnet1"
 addressPrefixVnet="10.1.0.0/24"
 subnetsArray=("h7subnet1" "10.1.2.0/24" "h7subnet2" "10.1.3.0/24")
-subname="${#subnetArray[@]}"
+subname=${#subnetArray[@]}
 
 # Create a resource group
 echo "Creating $resourceGroup in $location..."
@@ -43,7 +43,7 @@ az network vnet create \
 --address-prefix "$addressPrefixVNet"  \
 --subnet-name $"{subnetsArray[0]}" \
 --subnet-prefix $"{subnetsArray[1]}" \
-for ((i = 2; i < $(subname - 1); i += 2)); 
+for ((i = 2; i < $((subname - 1)); i += 2)); 
     do 
         az network vnet subnet create \ 
         -g "$resourceGroup" \

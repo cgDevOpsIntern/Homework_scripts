@@ -14,7 +14,9 @@ subnetArray=("subnet1h7" "subnet2h7")
 
 
 #Assigning NSG to VNet subnets
+echo "...>>>..."
 echo ">>>>Assigning NSG to VNet and subnets<<<<"
+echo "...>>>..."
 
 for ((i=0; i<2; i++))
 do
@@ -26,4 +28,6 @@ do
 done \
 
 #NSG rule assigned to VNet and subnets
+echo "...>>>..."
 echo ">>>>NSG rule assigned to VNet and subnets<<<<"
+echo "...>>>..."

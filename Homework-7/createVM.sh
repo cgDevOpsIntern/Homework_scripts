@@ -10,6 +10,7 @@
 
 # Variable block
 resourceGroup="homework7-build-grup"
+location="westeurope"
 vmName="VMh7-ubuntu-D2s"
 image="UbuntuLTS"
 size="Standard_D2s_v3"
@@ -17,6 +18,7 @@ vNet="homework7-vnet1"
 subnetName="subnet1h7"
 reservedIP="51.143.161.229"
 dnsName="VM-DNS-homework7"
+SKU="Standard"
 
 
 # Creating new VM
@@ -27,6 +29,7 @@ echo "...>>>..."
 az vm create\
     --name "$vmName" \
     --resource-group "$resourceGroup" \
+    --location "$location" \
     --image "$image" \
     --vnet-name "$vNet" \
     --subnet "$subnetName" \
@@ -35,6 +38,7 @@ az vm create\
     --generate-ssh-keys \
     --public-ip-address-allocation static \
     --size "$size" \
+    --public-ip-sku "$SKU"
 
 # New VM created
 echo "...>>>..."

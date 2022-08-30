@@ -7,7 +7,7 @@
 #
 
 # Variable block
-#let "randomIdentifier=$RANDOM*$RANDOM"
+
 echo "Assigning NSG to VNet subnets"
 resourceGroup="homework7-build-grup"
 nsgName="NSGh7"
@@ -21,4 +21,6 @@ do
     --vnet-name "$vNet" \
     -n ${subnetArray[$i]} \
     --network-security-group "$nsgName"
-done
+done \
+
+echo "NSG rule assigned to VNet and subnets"

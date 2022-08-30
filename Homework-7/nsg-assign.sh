@@ -6,15 +6,15 @@
 #    Input parameters: • NSG name • VNet and subnet name
 #
 
-echo "Assigning NSG to VNet subnets"
-#simple progress bar
-while true; do for X in '-' '/' '|' '\'; do echo -en "\b$X"; sleep 0.1; done; done \
-
 # Variable block
 resourceGroup="homework7-build-grup"
 nsgName="NSGh7"
 vNet="homework7-vnet1"
 subnetArray=("subnet1h7" "subnet2h7")
+
+
+#Assigning NSG to VNet subnets
+echo "Assigning NSG to VNet and subnets"
 
 for ((i=0; i<2; i++))
 do
@@ -25,6 +25,5 @@ do
     --network-security-group "$nsgName"
 done \
 
-#simple progress bar
-while true; do for X in '-' '/' '|' '\'; do echo -en "\b$X"; sleep 0.1; done; done \
+#NSG rule assigned to VNet and subnets
 echo "NSG rule assigned to VNet and subnets"

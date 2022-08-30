@@ -25,5 +25,6 @@ do
     --network-security-group "$nsgName"
 done \
 
-while true; do for X in '-' '/' '|' '\'; do echo -en "\b$X"; sleep 0.1; done; done 
+#simple progress bar
+while true; do for X in '-' '/' '|' '\'; do echo -en "\b$X"; sleep 0.1; done; done \
 echo "NSG rule assigned to VNet and subnets"

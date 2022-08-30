@@ -6,9 +6,11 @@
 #    Input parameters: • NSG name • VNet and subnet name
 #
 
-# Variable block
-
 echo "Assigning NSG to VNet subnets"
+#simple progress bar
+while true; do for X in '-' '/' '|' '\'; do echo -en "\b$X"; sleep 0.1; done; done
+
+# Variable block
 resourceGroup="homework7-build-grup"
 nsgName="NSGh7"
 vNet="homework7-vnet1"

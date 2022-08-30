@@ -18,7 +18,7 @@ for ((i=0; i<2; i++))
 do
     az network vnet subnet update \
     -g "$resourceGroup" \
-    -n ${subnetArray[$i]} \
     --vnet-name "$vNet" \
-    --network-security-group "$nsgName" \
+    -n ${subnetArray[$i]} \
+    --network-security-group "$nsgName"
 done

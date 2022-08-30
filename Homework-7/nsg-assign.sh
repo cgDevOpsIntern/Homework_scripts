@@ -21,4 +21,4 @@ do
     -n ${subnetArray[$i]} \
     --vnet-name "$vNet" \
     --network-security-group "$nsgName" \
-done    
+done

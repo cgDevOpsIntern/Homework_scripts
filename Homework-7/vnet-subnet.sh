@@ -8,7 +8,7 @@
 
 # Variable block
 #let "randomIdentifier=$RANDOM*$RANDOM"
-location="uksouth"
+location="westeurope"
 resourceGroup="homework7-build-grup"
 tag="homework7"
 vNet="homework7-vnet1"

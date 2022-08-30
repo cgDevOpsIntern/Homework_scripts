@@ -10,7 +10,7 @@
 #let "randomIdentifier=$RANDOM*$RANDOM"
 resourceGroup="homework7-build-grup"
 nsgName="NSGh7"
-location="uksouth"
+location="westeurope"
 tag="homework7"
 nsgRule='nsgRuleh7'
 priority="1000"

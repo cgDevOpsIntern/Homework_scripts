@@ -8,7 +8,7 @@
 
 echo "Assigning NSG to VNet subnets"
 #simple progress bar
-while true; do for X in '-' '/' '|' '\'; do echo -en "\b$X"; sleep 0.1; done; done
+while true; do for X in '-' '/' '|' '\'; do echo -en "\b$X"; sleep 0.1; done; done \
 
 # Variable block
 resourceGroup="homework7-build-grup"

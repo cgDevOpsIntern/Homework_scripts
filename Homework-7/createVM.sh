@@ -17,7 +17,7 @@ size="Standard_D2s_v3"
 vNet="homework7-vnet1"
 subnetName="subnet1h7"
 reservedIP="51.143.161.229"
-dnsName="VM-DNS-homework7"
+dnsName="vm-dns-homework7"
 SKU="Standard"
 
 

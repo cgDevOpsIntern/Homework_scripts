@@ -30,7 +30,7 @@ az appservice plan create \
     --location "$location" \
     --is-linux \
     --number-of-workers "$workers" \ 
-    --sku "$SKU" \
+    --sku "$sku" \
 
 # Creating new APP
 echo "...>>>..."

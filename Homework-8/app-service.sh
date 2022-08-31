@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 #
 # 1. to see variables ad "-x" to "hashbang/bin/bash" line on top.
@@ -12,7 +12,7 @@
 # for the plan
 rGroup="homework7-build-grup"
 location="westeurope"
-sPlan="linux-app-service-plan"
+sPlan="linuxAppServicePlan"
 workers="1"
 sku="B1"
 #for an app
@@ -29,7 +29,7 @@ az appservice plan create \
     --name "$sPlan" \
     --location "$location" \
     --is-linux \
-    --number-of-workers "$workers" \ 
+    --number-of-workers "$workers" \
     --sku "$sku" \
 
 # Creating new APP

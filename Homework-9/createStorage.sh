@@ -22,7 +22,7 @@ echo "...>>>..."
 az storage account create \
   --name "$name" \
   --resource-group "$rGroup" \
-  --location "location" \
+  --location "$location" \
   --sku "$sku" \
   --kind "$kind" \
 

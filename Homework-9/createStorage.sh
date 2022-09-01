@@ -1,28 +1,31 @@
 #!/bin/bash
-echo "Creating new Account Storage"
+
+#
+# 1. to see variables ad "-x" to "hashbang/bin/bash" line on top.
+# 2. Script that can create Storage Account. 
+#    Input parameters: -Region -Name -Pricing tier
+#
+
+# Variable block
+rGroup="homework7-build-grup"
+location="westeurope"
+name="storage01sah7"
+tag="homework7"
+sku="Standard_LRS"
+kind="StorageV2"
+
 # Create an Azure storage account in the resource group.
+echo "...>>>..."
+echo ">>>>Creating new Storage account $name in $rGroup group<<<<"
+echo "...>>>..."
+
 az storage account create \
-  --name storage01sah7 \
-  --location uksouth \
-  --resource-group build-agents-01 \
-  --sku Standard_LRS \
-  #--vnet-name build-agents-01-vnet \
-  #--subnet agents-subnet 
+  --name "$name" \
+  --resource-group "$rGroup" \
+  --location "location" \
+  --sku "$sku" \
+  --kind "$kind" \
 
-echo "New Account Storage created"
-
-az storage account list -g build-agents-01
-
-# Sucessfully created storage account "storage01sah7" see detail below.
-
-# Resource group: build-agents-01
-# Location:UK South
-
-# Subscription: Azure subscription 1
-# Disk state: Available
-# Performance: Standard
-# Replication: Locally-redundant storage (LRS)
-
-# Account kind: StorageV2 (general purpose v2)
-# Provisioning state: Succeeded
-# Created: 8/25/2022, 12:29:09 PM
+echo "...>>>..."
+echo ">>>>New Storage account $name created<<<<"
+echo "...>>>..."

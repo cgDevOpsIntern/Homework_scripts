@@ -28,7 +28,7 @@ az storage account create \
   --name "$name" \
   --resource-group "$rGroup" \
   --location "$location" \
-  --access-tier "$access_tier" \
+  --access-tier "$access-tier" \
 
 echo "...>>>..."
 echo ">>>>New HOT Storage account $name created<<<<"

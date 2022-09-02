@@ -18,12 +18,6 @@ echo "...>>>..."
 echo ">>>>Creating new Storage account $name in $rGroup group<<<<"
 echo "...>>>..."
 
-#az storage account create \
-#  --name "$name" \
-#  --resource-group "$rGroup" \ 
-#  --location "$location" \
-#  --access-tier "$access_tier" \
-
 az storage account create \
   --name "$name" \
   --resource-group "$rGroup" \

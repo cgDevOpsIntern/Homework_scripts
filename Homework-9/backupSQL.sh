@@ -2,16 +2,21 @@
 
 #
 # 1. to see variables ad "-x" to "hashbang/bin/bash" line on top.
-# 2. Script that can delete all services from the Resource Group. 
-#    Input parameters: -Resource Group name.
+# 2. Script that can configure automatic backups for Azure App Service to Storage Account 
+#   (including connected databases). 
+#   Input parameters: -App Service name -Storage Account name -Schedule -Retention policy
 #
 
 # Variable block
+# set -e # exit if error
 
 let "randomIdentifier=$RANDOM*$RANDOM"
-location="uksouth"
-resourceGroup="build-agents-02-storage"
-tag="backup-database"
+location="westeurope"
+rGroup="homework7-build-grup"
+tag="backup-database-h7.sh"
+appServicePlan="h7-app-service-plan-$randomIdentifier"
+webapp="h7-webapp-$randomIdentifier"
+# Continiue work from here
 sku="Standard_LRS"
 server="agents-backup-server-$randomIdentifier"
 database="agentsbackup02sqldb$randomIdentifier"

@@ -11,7 +11,7 @@ rGroup="homework7-build-grup"
 location="westeurope"
 name="storage02sah7"
 tag="homework7"
-access-tier="Hot"
+accTier="Hot"
 
 # Create an Azure storage account in the resource group.
 echo "...>>>..."
@@ -28,7 +28,7 @@ az storage account create \
   --name "$name" \
   --resource-group "$rGroup" \
   --location "$location" \
-  --access-tier "$access-tier" \
+  --access-tier "$accTier" \
 
 echo "...>>>..."
 echo ">>>>New HOT Storage account $name created<<<<"
